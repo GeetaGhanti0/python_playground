@@ -1,0 +1,15 @@
+import json
+
+response = { "name":"John", 
+            "address": {
+                "line1": "line1",
+                "line3": "line4"
+                }, 
+            "age":30, 
+            "city":"New York"}
+# response = requests.get("https://jsonplaceholder.typicode.com/todos")
+todos = json.loads(json.dumps(response))
+todos["exceptions"] = [{"code": "001", "message": "hello there I am here"}, {"code": "002", "message": "hello there I am here, I am here too"}] 
+json_object = json.dumps(todos)
+print("jsonObject"+json_object)
+print(todos)
